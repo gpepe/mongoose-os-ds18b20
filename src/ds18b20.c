@@ -37,7 +37,7 @@ void ds18b20_read_all(int pin, int res, ds18b20_read_t callback) {
             exit(1);                                // And blow up
         }
         memcpy(temp->rom, rom, 8);                  // Copy the ROM code into the result
-        temp->mac = new_string(23);                 // Allocate a string for the MAC address
+        temp->mac = new_string(24);                 // Allocate a string for the MAC address
         to_mac(rom, temp->mac);                     // Convert the rom to a MAC address string
         temp->next = list;                          // link to previous sensor
         list = temp;                                // set list point to new result
